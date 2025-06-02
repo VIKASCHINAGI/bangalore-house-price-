@@ -6,16 +6,14 @@ import base64
 import numpy as np
 import os
 
-# File paths (use relative paths, not local system paths)
-MODEL_PATH = 'Project.joblib'
-DATA_PATH = 'Cleaned_data.csv'
-IMAGE_PATH = 'house.png'
+# Define the path to the model file
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'Project.joblib')
 
 # Load the trained model
 model = joblib.load(MODEL_PATH)
 
 # Load the data for dropdowns
-data = pd.read_csv(DATA_PATH)
+data = pd.read_csv('Cleaned_data.csv')
 
 # Encode background image to base64
 def get_base64_of_bin_file(bin_file):
@@ -38,7 +36,7 @@ def set_bg_image(image_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Set the custom background image
-set_bg_image(IMAGE_PATH)
+set_bg_image('house.png')
 
 # App title and description
 st.title('🏠 Bangalore House Price Predictor')
