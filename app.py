@@ -10,7 +10,7 @@ import os
 MODEL_PATH = os.path.join(os.path.dirname(__file__), 'Project.joblib')
 
 # Load the trained model
-model = joblib.load(MODEL_PATH)
+model = joblib.load(r'C:\Users\Reneuit\Desktop\projectpy\bangalore-house-price-\Project.pkl')
 
 # Load the data for dropdowns
 data = pd.read_csv('Cleaned_data.csv')
